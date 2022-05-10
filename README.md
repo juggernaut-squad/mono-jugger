@@ -1,4 +1,4 @@
-## Welcome to the Jugger project.
+## Welcome to the Jugger project ([miro board](https://miro.com/app/board/uXjVO32BwvM=/)).
 
 There are two apps `client (runs on port 3000)` and `api (runs on port 3100)` using the following tech stack:
 >- [Nx](https://nx.dev/)
