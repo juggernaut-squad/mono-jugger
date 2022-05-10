@@ -55,7 +55,7 @@ There are two apps `client (runs on port 3000)` and `api (runs on port 3100)` us
 
 ### Developers:
 
->**[Evgeny Kirichuk](https://github.com/evgeny-kirichuk)** evgeny@kirichuk.me
+>**[Evgeny Kirichuk](https://github.com/evgeny-kirichuk)** (evgeny@kirichuk.me)
 >
 >**[Stsiapan Sukach](https://github.com/Qry1)**
 > 
