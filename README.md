@@ -1,94 +1,61 @@
+##Welcome to the Mopla front-end project.
+There are two apps `client (runs on port 3000)` and `api (runs on port 3100)` using the following tech stack:
+>- [Nx](https://nx.dev/)
+>- [React.js](https://reactjs.org/)
+>- [Recoil](https://recoiljs.org/)
+>- [Capacitor](https://capacitorjs.com/solution/react)
+>- [MUi](https://mui.com/)
+>- [React-testing-library](https://testing-library.com/docs/react-testing-library/intro/)
+>- [Cypress](https://www.cypress.io/)
 
+---
+####Generate an [app](https://nx.dev/structure/applications-and-libraries#applications-and-libraries) `nx g @nrwl/react:app my-app`
 
-# Jugger
+---
+####Generate a new [library](https://nx.dev/structure/library-types) `nx g @nrwl/react:lib ui` where `ui` is a library name.
 
-This project was generated using [Nx](https://nx.dev).
+---
+####Generate a [component](https://nx.dev/packages/react/generators/component) inside the library `nx g @nrwl/react:component todos --project=ui --export`
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+---
+####Generate a [component](https://nx.dev/packages/react/generators/component) inside the specific sub folder `nx generate @nrwl/react:component atomExample --project=ui --directory=atoms --export`
 
-🔎 **Smart, Fast and Extensible Build System**
+---
+####Run development [server](https://nx.dev/cli/serve) `nx serve client`
 
-## Adding capabilities to your workspace
+---
+####[Run many](https://nx.dev/cli/run-many) apps in parallel `nx run-many --target=serve --projects=client,api`
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+---
+####Running unit tests `nx test my-app`
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+####Execute the unit tests [affected](https://nx.dev/using-nx/affected#affected) by a change `nx affected:test`
 
-Below are our core plugins:
+---
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+####Execute the end-to-end tests via Cypress `nx e2e my-app`
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+####Execute the end-to-end tests [affected](https://nx.dev/using-nx/affected#affected) by a change `nx affected:e2e`
 
-## Generate an application
+---
+####[Build](https://nx.dev/cli/build#build) the project `nx build my-app`
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+---
+####Analyze a dependencies [graph](https://nx.dev/cli/dep-graph#graph) `nx graph`
 
-> You can use any of the plugins above to generate applications as well.
+---
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+###Project styleguide:
 
-## Generate a library
+- Components organized using [atomic approach](https://danilowoz.com/blog/atomic-design-with-react)
+- All requests work through [redux thunks](https://redux-toolkit.js.org/api/createAsyncThunk)
+- Global types declarations live in the root directory in the `common.d.ts` file (until a better solution will be found)
+- Global alias is `@jugger/` described in the `tsconfig.base.json` file.
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+###Developers:
 
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@jugger/mylib`.
-
-## Development server
-
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+>**[Evgeny Kirichuk](https://github.com/evgeny-kirichuk)** evgeny@kirichuk.me
+>
+>**[Stsiapan Sukach](https://github.com/Qry1)**
+> 
+>**[Ilya Kaminsky](https://github.com/Ikaminsky)**
