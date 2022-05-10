@@ -1,4 +1,4 @@
-## Welcome to the Jugger front-end project.
+## Welcome to the Jugger project.
 
 There are two apps `client (runs on port 3000)` and `api (runs on port 3100)` using the following tech stack:
 >- [Nx](https://nx.dev/)
