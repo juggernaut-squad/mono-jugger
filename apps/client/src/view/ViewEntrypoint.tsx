@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 
 import { theme } from '@jugger/ui';
 import { NetworkStatusProvider } from '@jugger/utils';
-import AppRoutes from './routes/AppRouter';
+import AppRoutes from '@client/routes/AppRouter';
 
 const ViewEntrypoint: React.FunctionComponent = () => {
 	return (

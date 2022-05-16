@@ -1,11 +1,11 @@
 import React, { lazy } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import Main from '../mainLayout/main/Main';
-import LazyRoute from './LazyRoute';
+import Main from '@client/mainLayout/main/Main';
+import LazyRoute from '@client/routes/LazyRoute';
 
 const HomeScreen = lazy(
-	() => import(/*webpackChunkName: "Home"*/ '../pages/home/Home')
+	() => import(/*webpackChunkName: "Home"*/ '@client/pages/home/Home')
 );
 
 const AppRoutes: React.FunctionComponent = () => (
