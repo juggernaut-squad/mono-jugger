@@ -6,8 +6,6 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 
-// TODO: check the modules concept in case of aliases
-// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 import { AppModule } from '@api/app/app.module';
 
 async function bootstrap() {
