@@ -23,4 +23,4 @@ jobs:
               run: npm i
 
             - name: Run linters
-              run: nx run-many --all --target=lint
+              run: npx nx run-many --all --target=lint
