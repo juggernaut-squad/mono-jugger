@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
-class AuthModel {
+export class AuthModel {
     @Prop({ unique: true, required: true })
     email: string;
 

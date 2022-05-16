@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { getMongoConfig } from '../configs/mongo.config';
 import { AuthModule } from '../auth/auth.module';
+import { UserModule } from '../user/user.module';
 
 @Module({
     imports: [
@@ -16,6 +17,7 @@ import { AuthModule } from '../auth/auth.module';
             useFactory: getMongoConfig,
         }),
         AuthModule,
+        UserModule,
     ],
     controllers: [AppController],
     providers: [AppService],
