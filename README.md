@@ -56,7 +56,7 @@ There are two apps `client (runs on port 3000)` and `api (runs on port 3100)` us
 
 ---
 
-#### To update native builds run `npx cap copy android` and `npx cap copy ios` in the app folder.
+#### To update native builds run `nx build client` from the root. Then run `npx cap copy android` and `npx cap copy ios` in the app folder.
 
 ### Project styleguide:
 
