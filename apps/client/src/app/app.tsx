@@ -1,14 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import ViewEntrypoint from '../view/ViewEntrypoint';
 
 export function App() {
-  return (
-    <>
-      <NxWelcome title="client" />
-      <div />
-    </>
-  );
+	return (
+    <ViewEntrypoint />
+	);
 }
 
 export default App;

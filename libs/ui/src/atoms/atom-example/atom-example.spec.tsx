@@ -1,11 +1,10 @@
 import { render } from '@testing-library/react';
 
-import App from './app';
+import AtomExample from './atom-example';
 
-describe('App', () => {
+describe('AtomExample', () => {
 	it('should render successfully', () => {
-		const { baseElement } = render(<App />);
-
+		const { baseElement } = render(<AtomExample />);
 		expect(baseElement).toBeTruthy();
 	});
 });
