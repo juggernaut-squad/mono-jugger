@@ -23,4 +23,4 @@ jobs:
               run: npm i
 
             - name: Run Tests
-              run: nx run-many --all --target=test
+              run: npx nx run-many --all --target=test
