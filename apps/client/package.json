@@ -1,0 +1,14 @@
+{
+	"name": "client-app",
+	"version": "0.0.0",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"@capacitor/android": "^3.5.1",
+		"@capacitor/core": "^3.5.1",
+		"@capacitor/ios": "^3.5.1"
+	},
+	"devDependencies": {
+		"@capacitor/cli": "^3.5.1"
+	}
+}
