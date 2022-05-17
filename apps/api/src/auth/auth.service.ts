@@ -5,15 +5,12 @@ import { AuthModel } from './auth.model';
 
 @Injectable()
 export class AuthService {
-    constructor(
-        @InjectModel('Auth')
-        private readonly userModel: Model<AuthModel>,
-    ) {}
+	constructor(
+		@InjectModel('Auth')
+		private readonly userModel: Model<AuthModel>
+	) {}
 
-    login(email: string, password: string) {
-        return {
-            error: false,
-            message: 'Successfully logged in!',
-        };
-    }
+	login(email: string, password: string) {
+		return 'Successfully logged in!';
+	}
 }
