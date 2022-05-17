@@ -9,17 +9,17 @@ import { AuthModule } from '../auth/auth.module';
 import { UserModule } from '../user/user.module';
 
 @Module({
-    imports: [
-        ConfigModule.forRoot(),
-        MongooseModule.forRootAsync({
-            imports: [ConfigModule],
-            inject: [ConfigService],
-            useFactory: getMongoConfig,
-        }),
-        AuthModule,
-        UserModule,
-    ],
-    controllers: [AppController],
-    providers: [AppService],
+	imports: [
+		ConfigModule.forRoot(),
+		MongooseModule.forRootAsync({
+			imports: [ConfigModule],
+			inject: [ConfigService],
+			useFactory: getMongoConfig,
+		}),
+		AuthModule,
+		UserModule,
+	],
+	controllers: [AppController],
+	providers: [AppService],
 })
 export class AppModule {}
