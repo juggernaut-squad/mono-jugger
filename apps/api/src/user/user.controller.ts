@@ -7,11 +7,13 @@ import {
 	Param,
 	Post,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
 import { IdValidationPipe } from '../pipes/id-validation/id-validation.pipe';
 import { USER_NOT_FOUND_ERROR } from './user.constants';
 import { UserService } from './user.service';
 
+@ApiTags('User')
 @Controller('user')
 export class UserController {
 	constructor(private readonly userService: UserService) {}
