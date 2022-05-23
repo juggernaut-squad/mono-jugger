@@ -10,6 +10,7 @@ import {
 
 import { IdValidationPipe } from '../pipes/id-validation/id-validation.pipe';
 import { USER_NOT_FOUND_ERROR } from './user.constants';
+import { UserModel } from './user.model';
 import { UserService } from './user.service';
 
 @Controller('user')
@@ -17,8 +18,8 @@ export class UserController {
 	constructor(private readonly userService: UserService) {}
 
 	@Post('create')
-	async create(@Body() dto) {
-		return this.userService.create(dto);
+	async create(@Body() userDto: UserModel) {
+		return this.userService.create(userDto);
 	}
 
 	@Get()
