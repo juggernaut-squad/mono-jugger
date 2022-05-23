@@ -1,8 +1,11 @@
+import { Logger } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
-export const initSwagger = (app) => {
+export const initSwagger = (app: NestExpressApplication, port: string) => {
 	const document = SwaggerModule.createDocument(app, config);
 	SwaggerModule.setup('swagger', app, document);
+	Logger.log(`🚀 Swagger is running on: http://localhost:${port}/swagger`);
 };
 
 const config = new DocumentBuilder()

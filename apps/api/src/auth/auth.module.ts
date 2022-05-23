@@ -7,17 +7,17 @@ import { AuthService } from './auth.service';
 import { AuthSchema } from './auth.model';
 
 @Module({
-    imports: [
-        MongooseModule.forFeature([
-            {
-                name: 'Auth',
-                schema: AuthSchema,
-                collection: 'Auth',
-            },
-        ]),
-        ConfigModule,
-    ],
-    controllers: [AuthController],
-    providers: [AuthService],
+	imports: [
+		MongooseModule.forFeature([
+			{
+				name: 'Auth',
+				schema: AuthSchema,
+				collection: 'Auth',
+			},
+		]),
+		ConfigModule,
+	],
+	controllers: [AuthController],
+	providers: [AuthService],
 })
 export class AuthModule {}
