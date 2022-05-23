@@ -1,7 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Schema as MongooseSchema } from 'mongoose';
 
-@Schema()
+@Schema({ timestamps: true })
 export class UserModel {
+	_id: MongooseSchema.Types.ObjectId;
+
 	@Prop({ unique: true, required: true })
 	email: string;
 
