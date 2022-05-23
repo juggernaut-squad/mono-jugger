@@ -6,7 +6,7 @@ import { initSwagger } from './configs/swagger.config';
 
 async function bootstrap() {
 	const globalPrefix = 'api';
-	const port = process.env.PORT || 3333;
+	const port = process.env.PORT;
 
 	const app = await NestFactory.create(AppModule);
 	app.setGlobalPrefix(globalPrefix);
