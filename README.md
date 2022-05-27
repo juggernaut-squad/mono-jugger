@@ -16,7 +16,7 @@ There are two apps `client (runs on port 3000)` and `api (runs on port 3100)` us
 
 ---
 
-#### Generate a new [library](https://nx.dev/structure/library-types) `nx g @nrwl/react:lib ui` where `ui` is a library name.
+#### Generate a new [library](https://nx.dev/structure/library-types) `nx g @nrwl/react:lib ui --pascalCaseFiles --pascalCaseDirectory` where `ui` is a library name.
 
 ---
 
@@ -24,7 +24,7 @@ There are two apps `client (runs on port 3000)` and `api (runs on port 3100)` us
 
 ---
 
-#### Generate a [component](https://nx.dev/packages/react/generators/component) inside the specific sub folder `nx generate @nrwl/react:component atomExample --project=ui --directory=atoms --export`
+#### Generate a [component](https://nx.dev/packages/react/generators/component) inside the specific sub folder `nx generate @nrwl/react:component atomExample --project=ui --directory=atoms --pascalCaseFiles --pascalCaseDirectory --export`
 
 ---
 

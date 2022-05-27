@@ -1,7 +1,14 @@
 import React, { lazy } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import {
+	BrowserRouter,
+	Navigate,
+	Route,
+	Routes,
+	Outlet,
+} from 'react-router-dom';
 
-import Main from '@client/mainLayout/main/Main';
+import { MainLayout } from '@jugger/ui';
+
 import LazyRoute from '@client/routes/LazyRoute';
 
 const HomeScreen = lazy(
@@ -12,7 +19,14 @@ const AppRoutes: React.FunctionComponent = () => (
 	<React.Suspense fallback={null}>
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Main />}>
+				<Route
+					path="/"
+					element={
+						<MainLayout>
+							<Outlet />
+						</MainLayout>
+					}
+				>
 					<Route
 						path="home"
 						element={
