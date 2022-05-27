@@ -6,7 +6,7 @@ import { BottomNavigation } from '../../organisms/BottomNavigation/BottomNavigat
 
 /* eslint-disable-next-line */
 export interface MainLayoutProps {
-	children: ReactElement;
+	children?: ReactElement;
 }
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
