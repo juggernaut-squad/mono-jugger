@@ -1,16 +1,8 @@
-import {
-	Body,
-	Controller,
-	Delete,
-	Get,
-	NotFoundException,
-	Param,
-	Post,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
 import { IdValidationPipe } from '../pipes/id-validation/id-validation.pipe';
-import { USER_NOT_FOUND_ERROR } from './user.constants';
+import { UserByIdPipe } from '../pipes/user-by-id/user-by-id.pipe';
 import { UserModel } from './user.model';
 import { UserService } from './user.service';
 
@@ -30,22 +22,12 @@ export class UserController {
 	}
 
 	@Get(':id')
-	async get(@Param('id', IdValidationPipe) id: string) {
-		const user = await this.userService.findById(id);
-
-		if (!user) {
-			throw new NotFoundException(USER_NOT_FOUND_ERROR);
-		}
-
+	async get(@Param('id', IdValidationPipe, UserByIdPipe) user: UserModel) {
 		return user;
 	}
 
 	@Delete(':id')
-	async delete(@Param('id', IdValidationPipe) id: string) {
-		const deletedProduct = await this.userService.deleteById(id);
-
-		if (!deletedProduct) {
-			throw new NotFoundException(USER_NOT_FOUND_ERROR);
-		}
+	async delete(@Param('id', IdValidationPipe) user: UserModel) {
+		await this.userService.deleteById(user._id.toString());
 	}
 }

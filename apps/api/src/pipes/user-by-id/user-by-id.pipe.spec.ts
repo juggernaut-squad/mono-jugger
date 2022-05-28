@@ -1,12 +1,12 @@
 import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { UserController } from './user.controller';
-import { UserService } from './user.service';
-import { UserModule } from './user.module';
+import { UserByIdPipe } from './user-by-id.pipe';
+import { UserService } from '../../user/user.service';
+import { UserModule } from '../../user/user.module';
 
-describe('UserController', () => {
-	let userController: UserController;
+describe('UserByIdPipe', () => {
+	let pipe: UserByIdPipe;
 	let userService: UserService;
 
 	beforeEach(async () => {
@@ -18,10 +18,10 @@ describe('UserController', () => {
 			.compile();
 
 		userService = moduleRef.get<UserService>(UserService);
-		userController = moduleRef.get<UserController>(UserController);
+		pipe = new UserByIdPipe(userService);
 	});
 
 	it('should be defined', () => {
-		expect(userController).toBeDefined();
+		expect(pipe).toBeDefined();
 	});
 });

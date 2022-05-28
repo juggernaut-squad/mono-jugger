@@ -1,5 +1,6 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
 import { AppModule } from './app/app.module';
 import { initSwagger } from './configs/swagger.config';
@@ -8,14 +9,13 @@ async function bootstrap() {
 	const globalPrefix = 'api';
 	const port = process.env.PORT;
 
-	const app = await NestFactory.create(AppModule);
+	const app: NestExpressApplication = await NestFactory.create(AppModule);
 	app.setGlobalPrefix(globalPrefix);
 
-	initSwagger(app);
+	initSwagger(app, port);
 
 	await app.listen(port);
 
-	Logger.log(`🚀 Swagger is running on: http://localhost:${port}/swagger`);
 	Logger.log(
 		`🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
 	);
