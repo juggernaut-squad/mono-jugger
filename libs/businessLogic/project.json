@@ -1,0 +1,22 @@
+{
+	"sourceRoot": "libs/businessLogic/src",
+	"projectType": "library",
+	"tags": [],
+	"targets": {
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/businessLogic/**/*.{ts,tsx,js,jsx}"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/libs/businessLogic"],
+			"options": {
+				"jestConfig": "libs/businessLogic/jest.config.ts",
+				"passWithNoTests": true
+			}
+		}
+	}
+}

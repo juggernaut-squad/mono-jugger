@@ -32,6 +32,7 @@
 			"@client/store/*": ["apps/client/src/store/*"],
 			"@client/view": ["apps/client/src/view"],
 			"@client/view/*": ["apps/client/src/view/*"],
+			"@jugger/businessLogic": ["libs/businessLogic/src/index.ts"],
 			"@jugger/ui": ["libs/ui/src/index.ts"],
 			"@jugger/utils": ["libs/utils/src/index.ts"]
 		}
