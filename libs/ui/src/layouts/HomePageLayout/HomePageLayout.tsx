@@ -1,15 +1,13 @@
+import React, { ReactElement } from 'react';
 import { Root } from './HomePageLayout.styles';
 
-import { TodoList } from '../../organisms/TodoList/TodoList';
 /* eslint-disable-next-line */
-export interface HomeLayoutProps {}
-
-export function HomePageLayout(props: HomeLayoutProps) {
-	return (
-		<Root>
-			<TodoList />
-		</Root>
-	);
+export interface HomeLayoutProps {
+	children?: ReactElement;
 }
+
+export const HomePageLayout: React.FC<HomeLayoutProps> = ({ children }) => {
+	return <Root>{children}</Root>;
+};
 
 export default HomePageLayout;

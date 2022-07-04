@@ -1,6 +1,3 @@
-export * from './organisms/TodoList/TodoList';
-export * from './organisms/BottomNavigation/BottomNavigation';
-export * from './organisms/AppHeader/AppHeader';
 export * from './layouts/MainLayout/MainLayout';
 export * from './layouts/HomePageLayout/HomePageLayout';
 export * from './atoms/loader/Loader';
