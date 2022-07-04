@@ -9,6 +9,8 @@ import {
 
 import { MainLayout } from '@jugger/ui';
 
+import AppHeader from '@client/organisms/AppHeader/AppHeader';
+import BottomNavigation from '@client/organisms/BottomNavigation/BottomNavigation';
 import LazyRoute from '@client/routes/LazyRoute';
 
 const HomeScreen = lazy(
@@ -22,9 +24,11 @@ const AppRoutes: React.FunctionComponent = () => (
 				<Route
 					path="/"
 					element={
-						<MainLayout>
-							<Outlet />
-						</MainLayout>
+						<MainLayout
+							header={<AppHeader />}
+							footer={<BottomNavigation />}
+							content={<Outlet />}
+						/>
 					}
 				>
 					<Route
