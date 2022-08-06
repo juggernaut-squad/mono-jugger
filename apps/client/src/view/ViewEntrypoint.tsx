@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 

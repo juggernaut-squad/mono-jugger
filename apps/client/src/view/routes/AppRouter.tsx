@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import React, { lazy } from 'react';
 import {
 	BrowserRouter,
@@ -16,11 +17,24 @@ import LazyRoute from '@client/routes/LazyRoute';
 const HomeScreen = lazy(
 	() => import(/*webpackChunkName: "Home"*/ '@client/pages/home/Home')
 );
+const LoginScreen = lazy(
+	() => import(/*webpackChunkName: "Login"*/ '@client/pages/login/Login')
+);
 
 const AppRoutes: React.FunctionComponent = () => (
 	<React.Suspense fallback={null}>
 		<BrowserRouter>
 			<Routes>
+				<Route path="auth">
+					<Route
+						path="login"
+						element={
+							<LazyRoute>
+								<LoginScreen />
+							</LazyRoute>
+						}
+					/>
+				</Route>
 				<Route
 					path="/"
 					element={
@@ -42,7 +56,7 @@ const AppRoutes: React.FunctionComponent = () => (
 					<Route path="*" element={<Navigate to="/home" />} />
 				</Route>
 
-				<Route index element={<Navigate to="/home" />} />
+				<Route index element={<Navigate to="/auth/login" />} />
 			</Routes>
 		</BrowserRouter>
 	</React.Suspense>
