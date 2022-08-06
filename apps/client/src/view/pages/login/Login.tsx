@@ -1,13 +1,13 @@
 /* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { HomePageLayout } from '@jugger/ui';
-import TodoList from '@client/organisms/TodoList/TodoList';
+import LoginForm from '@client/organisms/LoginForm/LoginForm';
 
-const HomePage = () => {
+const LoginPage = () => {
 	return (
 		<HomePageLayout>
-			<TodoList />
+			<LoginForm />
 		</HomePageLayout>
 	);
 };
 
-export default HomePage;
+export default LoginPage;
